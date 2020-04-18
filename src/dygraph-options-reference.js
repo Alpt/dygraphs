@@ -414,6 +414,12 @@ OPTIONS_REFERENCE =  // <JSON>
     "type": "integer",
     "description": "The size in pixels of the dot drawn over highlighted points."
   },
+  "pointClickRadius": {
+    "default": "50",
+    "labels": ["Interactive Elements"],
+    "type": "integer",
+    "description": "How farther from the point a click is considered to activate the point."
+  },
   "gridLineColor": {
     "default": "rgb(128,128,128)",
     "labels": ["Grid"],
