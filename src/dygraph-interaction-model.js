@@ -318,8 +318,8 @@ DygraphInteraction.treatMouseOpAsClick = function(g, event, context) {
     }
   }
 
-  // Allow any click within two pixels of the dot.
-  var radius = g.getNumericOption('highlightCircleSize') + 2;
+  // Allow any click within some pixels of the dot.
+  var radius = g.getNumericOption('highlightCircleSize') + (g.getNumericOption('pointClickRadius') || 2);
   if (closestDistance <= radius * radius) {
     selectedPoint = g.selPoints_[closestIdx];
   }

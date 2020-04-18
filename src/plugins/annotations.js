@@ -110,6 +110,8 @@ annotations.prototype.didDrawChart = function(e) {
       div.appendChild(img);
     } else if (p.annotation.hasOwnProperty('shortText')) {
       div.appendChild(document.createTextNode(p.annotation.shortText));
+    } else if (p.annotation.hasOwnProperty('html')) {
+      div.innerHTML = p.annotation.html
     }
     var left = p.canvasx - width / 2;
     div.style.left = left + "px";
