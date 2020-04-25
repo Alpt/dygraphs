@@ -418,7 +418,6 @@ function isOutOfExtremes(p, ex) {
  * @private
  */
 DygraphInteraction.startTouch = function(event, g, context) {
-  event.preventDefault();  // touch browsers are all nice.
   if (event.touches.length > 1) {
     // If the user ever puts two fingers down, it's not a double tap.
     context.startTimeForDoubleTapMs = null;
@@ -520,6 +519,7 @@ DygraphInteraction.moveTouch = function(event, g, context) {
   if (touches.length == 1) {
     c_now = touches[0];
   } else {
+    event.preventDefault();  // touch browsers are all nice.
     c_now = {
       pageX: 0.5 * (touches[0].pageX + touches[1].pageX),
       pageY: 0.5 * (touches[0].pageY + touches[1].pageY)
